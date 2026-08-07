@@ -19,7 +19,7 @@ cp main.pdf ../../prabhukirangit.github.io/okts-preprint.pdf
 
 ## Open items
 
-- [ ] Register an [ORCID](https://orcid.org/register) and uncomment the ORCID
-      button in `index.html` (search for `TODO(you)`). arXiv recommends one.
+- [x] ORCID [0009-0001-9971-9589](https://orcid.org/0009-0001-9971-9589) linked
+      in the header and in the page's JSON-LD.
 - [ ] Add the arXiv ID to the Research and Publications sections once the
       preprint is announced.

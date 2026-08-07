@@ -90,6 +90,8 @@
   .btn:hover{border-color:var(--brand);text-decoration:none}
   .btn.primary{background:var(--brand);border-color:var(--brand);color:#fff}
   .btn.primary:hover{filter:brightness(1.07)}
+  .orcid{display:inline-grid;place-items:center;width:15px;height:15px;border-radius:50%;
+         background:#a6ce39;color:#fff;font:800 8.5px var(--sans);letter-spacing:-.02em}
 
   /* ---- sections ---- */
   section{padding:38px 0;border-bottom:1px solid var(--line)}
@@ -183,9 +185,8 @@
       <a class="btn primary" href="#research">Research →</a>
       <a class="btn" href="mailto:prabhukiran.g@gmail.com">✉ prabhukiran.g@gmail.com</a>
       <a class="btn" href="https://github.com/prabhukirangit">GitHub ↗</a>
-      <!-- TODO(you): create an ORCID at https://orcid.org/register (2 min, free) and add it here.
-           arXiv strongly recommends one, and SUBMISSION.md lists it as an open checklist item.
-        <a class="btn" href="https://orcid.org/0000-0000-0000-0000">ORCID ↗</a> -->
+      <a class="btn" href="https://orcid.org/0009-0001-9971-9589">
+        <span class="orcid" aria-hidden="true">iD</span> ORCID ↗</a>
     </div>
   </header>
 
@@ -472,7 +473,12 @@
     { "@type": "CollegeOrUniversity", "name": "University of Hyderabad" },
     { "@type": "CollegeOrUniversity", "name": "JNTU Hyderabad" }
   ],
-  "sameAs": ["https://github.com/prabhukirangit"],
+  "identifier": {
+    "@type": "PropertyValue",
+    "propertyID": "ORCID",
+    "value": "https://orcid.org/0009-0001-9971-9589"
+  },
+  "sameAs": ["https://orcid.org/0009-0001-9971-9589","https://github.com/prabhukirangit"],
   "knowsAbout": ["Generative AI","Large Language Models","Multi-Agent Systems","Context Engineering","Model Context Protocol","Retrieval-Augmented Generation","Information Retrieval","Deep Learning","Machine Learning","Natural Language Processing"]
 }
 </script>
