@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prabhukiran Ganapavarapu</title>
+<meta name="description" content="Prabhukiran Ganapavarapu — Staff Data Scientist and independent researcher working on retrieval and context engineering for LLM agents.">
+<meta name="author" content="Prabhukiran Ganapavarapu">
+
+<!-- Open Graph / social preview -->
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Prabhukiran Ganapavarapu">
+<meta property="og:description" content="Staff Data Scientist and independent researcher — retrieval and context engineering for LLM agents.">
+<meta property="og:url" content="https://prabhukirangit.github.io/">
+
+<style>
+  :root{
+    --bg:#fbfbfc;--panel:#fff;--ink:#14181f;--muted:#5d6773;--faint:#8a949f;--line:#e5e8ee;
+    --brand:#3b6cff;--brand-ink:#2450d8;--accent:#8b5cf6;--chip:#f0f2f7;
+    --shadow:0 1px 2px rgba(16,22,32,.05),0 8px 28px rgba(16,22,32,.06);--radius:14px;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+    --mono:"SF Mono",ui-monospace,"Cascadia Code","JetBrains Mono",Menlo,Consolas,monospace;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{--bg:#0b0e13;--panel:#131820;--ink:#e9eef5;--muted:#98a4b3;--faint:#6f7c8c;--line:#212a36;
+      --brand:#6b93ff;--brand-ink:#a6c0ff;--accent:#a78bfa;--chip:#1a2230;
+      --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 38px rgba(0,0,0,.42)}
+  }
+  :root[data-theme="light"]{--bg:#fbfbfc;--panel:#fff;--ink:#14181f;--muted:#5d6773;--faint:#8a949f;--line:#e5e8ee;--brand:#3b6cff;--brand-ink:#2450d8;--accent:#8b5cf6;--chip:#f0f2f7;--shadow:0 1px 2px rgba(16,22,32,.05),0 8px 28px rgba(16,22,32,.06)}
+  :root[data-theme="dark"]{--bg:#0b0e13;--panel:#131820;--ink:#e9eef5;--muted:#98a4b3;--faint:#6f7c8c;--line:#212a36;--brand:#6b93ff;--brand-ink:#a6c0ff;--accent:#a78bfa;--chip:#1a2230;--shadow:0 1px 2px rgba(0,0,0,.4),0 10px 38px rgba(0,0,0,.42)}
+
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.62;
+       -webkit-font-smoothing:antialiased;font-size:16px}
+  .wrap{max-width:820px;margin:0 auto;padding:0 22px}
+  a{color:var(--brand-ink);text-decoration:none}
+  a:hover{text-decoration:underline}
+  h1,h2,h3{line-height:1.2;letter-spacing:-.021em;margin:0}
+  p{margin:.7em 0}
+  code{font-family:var(--mono);font-size:.9em;background:var(--chip);border:1px solid var(--line);
+       border-radius:5px;padding:1px 5px}
+
+  /* ---- top bar ---- */
+  .topbar{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);
+          backdrop-filter:saturate(160%) blur(10px);border-bottom:1px solid var(--line)}
+  .topbar .row{display:flex;align-items:center;gap:8px;padding:11px 0}
+  .mark{display:flex;align-items:center;gap:9px;font-weight:750;letter-spacing:-.02em;font-size:14.5px}
+  .dot3{display:inline-grid;grid-template-columns:repeat(3,1fr);gap:3px}
+  .dot3 i{width:6px;height:6px;border-radius:50%;background:var(--brand)}
+  .dot3 i:nth-child(n+4){background:var(--line)}
+  .spacer{flex:1}
+  .navlink{color:var(--muted);font-size:13.5px;font-weight:600;padding:6px 9px;border-radius:8px}
+  .navlink:hover{background:var(--chip);color:var(--ink);text-decoration:none}
+  @media(max-width:660px){.navlink.opt{display:none}}
+  .themebtn{cursor:pointer;border:1px solid var(--line);background:var(--panel);color:var(--ink);
+            border-radius:8px;padding:6px 9px;font:600 13px var(--sans)}
+
+  /* ---- hero ---- */
+  header.hero{padding:54px 0 30px;border-bottom:1px solid var(--line)}
+  header h1{font-size:clamp(32px,6vw,46px);font-weight:760}
+  .role{color:var(--muted);font-size:clamp(15px,2.4vw,17.5px);margin-top:10px;font-weight:500}
+  .lede{margin-top:18px;font-size:16.5px;color:var(--ink);max-width:64ch}
+  .lede .em{font-weight:650}
+  .links{display:flex;flex-wrap:wrap;gap:9px;margin-top:22px}
+  .btn{display:inline-flex;align-items:center;gap:7px;border:1px solid var(--line);background:var(--panel);
+       color:var(--ink);border-radius:9px;padding:8px 13px;font:600 13.5px var(--sans);box-shadow:var(--shadow)}
+  .btn:hover{border-color:var(--brand);text-decoration:none}
+  .btn.primary{background:var(--brand);border-color:var(--brand);color:#fff}
+  .btn.primary:hover{filter:brightness(1.07)}
+
+  /* ---- sections ---- */
+  section{padding:38px 0;border-bottom:1px solid var(--line)}
+  section:last-of-type{border-bottom:0}
+  .h{display:flex;align-items:baseline;gap:12px;margin-bottom:6px}
+  .h h2{font-size:13px;font-family:var(--mono);font-weight:700;letter-spacing:.13em;
+        text-transform:uppercase;color:var(--brand-ink)}
+  .h .rule{flex:1;height:1px;background:var(--line)}
+  .sub{color:var(--muted);font-size:14.5px;margin:0 0 18px}
+
+  /* ---- featured paper ---- */
+  .paper{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--brand);
+         border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
+  .paper h3{font-size:19.5px;font-family:var(--serif);font-weight:700;letter-spacing:-.01em}
+  .paper .meta{color:var(--faint);font-size:13px;margin-top:7px;font-family:var(--mono)}
+  .abs{font-size:14.5px;color:var(--muted);margin-top:14px}
+  .abs strong{color:var(--ink);font-weight:600}
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:18px}
+  @media(max-width:560px){.stats{grid-template-columns:1fr}}
+  .stat{background:var(--chip);border:1px solid var(--line);border-radius:10px;padding:11px 13px}
+  .stat b{display:block;font-size:20px;font-weight:750;letter-spacing:-.02em}
+  .stat span{font-size:11.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;font-weight:600}
+
+  /* ---- repo cards ---- */
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media(max-width:700px){.grid{grid-template-columns:1fr}}
+  .card{display:block;background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+        padding:17px 18px;box-shadow:var(--shadow);color:inherit;transition:transform .12s,border-color .15s}
+  .card:hover{transform:translateY(-2px);border-color:var(--brand);text-decoration:none}
+  .card h3{font-size:15.5px;font-family:var(--mono);font-weight:700}
+  .card p{font-size:13.5px;color:var(--muted);margin:8px 0 0}
+  .tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:12px}
+  .tag{font:600 10.5px var(--mono);background:var(--chip);border:1px solid var(--line);
+       border-radius:20px;padding:2px 8px;color:var(--muted)}
+
+  /* ---- lists ---- */
+  .item{display:flex;gap:18px;padding:13px 0;border-bottom:1px dashed var(--line)}
+  .item:last-child{border-bottom:0}
+  .item .when{flex:0 0 128px;font-family:var(--mono);font-size:12.5px;color:var(--faint);padding-top:3px}
+  @media(max-width:600px){.item{flex-direction:column;gap:3px}.item .when{flex:none}}
+  .item .what b{font-weight:650}
+  .item .what .org{color:var(--muted)}
+  .item .what p{font-size:14px;color:var(--muted);margin:4px 0 0}
+
+  .pub{padding:13px 0;border-bottom:1px dashed var(--line)}
+  .pub:last-child{border-bottom:0}
+  .pub .t{font-family:var(--serif);font-size:16px;font-weight:650}
+  .pub .v{font-size:13.5px;color:var(--muted);margin-top:3px}
+
+  footer{padding:34px 0 46px;color:var(--faint);font-size:13px}
+  footer a{color:var(--muted)}
+</style>
+</head>
+<body>
+
+<div class="topbar"><div class="wrap row">
+  <span class="mark"><span class="dot3"><i></i><i></i><i></i><i></i><i></i><i></i></span> PG</span>
+  <div class="spacer"></div>
+  <a class="navlink" href="#research">Research</a>
+  <a class="navlink opt" href="#software">Software</a>
+  <a class="navlink opt" href="#publications">Publications</a>
+  <a class="navlink opt" href="#experience">Experience</a>
+  <button class="themebtn" id="themeBtn" aria-label="Toggle colour theme">◐</button>
+</div></div>
+
+<div class="wrap">
+
+  <header class="hero">
+    <h1>Prabhukiran Ganapavarapu</h1>
+    <div class="role">Staff Data Scientist, Cloud Software Group (formerly Citrix) · Bengaluru, India<br>
+      Independent researcher — retrieval and context engineering for LLM agents</div>
+
+    <p class="lede">I build retrieval systems for agents that have too many tools. My current work asks a
+      deliberately awkward question: <span class="em">how much of the retrieval stack can you delete and still
+      rank correctly?</span> Across three open-source runtimes I have been replacing embedding models, vector
+      stores and re-indexing pipelines with portable text descriptors and lexical-first ranking — and measuring
+      what that actually costs in accuracy.</p>
+
+    <div class="links">
+      <a class="btn primary" href="#research">Research →</a>
+      <a class="btn" href="mailto:prabhukiran.g@gmail.com">✉ prabhukiran.g@gmail.com</a>
+      <a class="btn" href="https://github.com/prabhukirangit">GitHub ↗</a>
+      <!-- TODO(you): create an ORCID at https://orcid.org/register (2 min, free) and add it here.
+           arXiv strongly recommends one, and SUBMISSION.md lists it as an open checklist item.
+        <a class="btn" href="https://orcid.org/0000-0000-0000-0000">ORCID ↗</a> -->
+    </div>
+  </header>
+
+  <!-- ============================ RESEARCH ============================ -->
+  <section id="research">
+    <div class="h"><h2>Research</h2><div class="rule"></div></div>
+    <p class="sub">Zero-infrastructure retrieval for LLM agent tool discovery.</p>
+
+    <div class="paper">
+      <h3>OKTS: Open Knowledge Tool Search<br>
+        <span style="font-weight:500;font-size:.86em">(Progressive Tool Disclosure with Portable Descriptors)</span></h3>
+      <div class="meta">Preprint, 2026 · submission to arXiv cs.IR in preparation</div>
+
+      <p class="abs">LLM agents are increasingly wired to hundreds of tools, and loading every tool's JSON
+        schema up front costs tokens in proportion to the <em>catalogue</em> rather than the <em>task</em> —
+        re-paid on every turn. The usual fix, RAG over tool embeddings, trades that for standing
+        infrastructure: a model to host or an API to call, a vector store to maintain, and a re-embedding pass
+        on every catalogue change. OKTS describes each tool as a portable, git-versioned Markdown descriptor
+        and serves any catalogue behind a fixed three-tool interface
+        (<code>search_tools</code>, <code>load_tool</code>, <code>call_tool</code>) via progressive disclosure.
+        Ranking uses a fully offline hybrid of BM25 and a <strong>deterministic feature-hashing
+        embedding</strong> — no model, no API, no vector store, nothing to re-embed.</p>
+
+      <div class="stats">
+        <div class="stat"><b>94.1%</b><span>fewer schema tokens</span></div>
+        <div class="stat"><b>92.7 → 97.6%</b><span>top-1 selection accuracy</span></div>
+        <div class="stat"><b>100%</b><span>collision avoidance</span></div>
+      </div>
+
+      <p class="abs" style="margin-top:16px">Measured over 148 tools adapted from 20 widely used MCP servers.
+        The ablation is reported as measured, including where it is null: the gain comes from
+        <em>fusing</em> the two lexical signals — neither reaches it alone — and <em>not</em> from the category
+        hierarchy or graph expansion, which are accuracy-neutral on this corpus. Every number in the paper is
+        emitted as a LaTeX macro by the evaluation harness, so no figure is typed by hand.</p>
+
+      <div class="links" style="margin-top:18px">
+        <a class="btn primary" href="okts-preprint.pdf">📄 Read the preprint (PDF)</a>
+        <a class="btn" href="https://github.com/prabhukirangit/OKTS">Code &amp; eval harness ↗</a>
+        <a class="btn" href="https://prabhukirangit.github.io/OKTS/">Interactive demos ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ SOFTWARE ============================ -->
+  <section id="software">
+    <div class="h"><h2>Open Source</h2><div class="rule"></div></div>
+    <p class="sub">One line of work, three runtimes — each attacking tool/knowledge discovery without a vector database.</p>
+
+    <div class="grid">
+      <a class="card" href="https://github.com/prabhukirangit/OKTS">
+        <h3>OKTS</h3>
+        <p>Source-agnostic runtime that ingests tools from MCP servers, functions, HTTP/OpenAPI endpoints and
+          sub-agents, describes each as a portable OKT markdown file, and exposes exactly three meta-tools to
+          any agent. Graph- and hierarchy-aware retrieval over the descriptor bundle.</p>
+        <div class="tags"><span class="tag">mcp</span><span class="tag">okf</span><span class="tag">retrieval</span><span class="tag">python</span><span class="tag">apache-2.0</span></div>
+      </a>
+
+      <a class="card" href="https://github.com/prabhukirangit/concept-router">
+        <h3>concept-router</h3>
+        <p>A zero-infra MCP server that turns an Open Knowledge Format (OKF) bundle — a directory of markdown
+          concept files with YAML frontmatter — into fast, lexical-first knowledge discovery for LLM agents.
+          No vector DB, no embeddings by default.</p>
+        <div class="tags"><span class="tag">mcp-server</span><span class="tag">okf</span><span class="tag">bm25</span><span class="tag">rrf</span></div>
+      </a>
+
+      <a class="card" href="https://github.com/prabhukirangit/SpecRouterMCP">
+        <h3>SpecRouterMCP</h3>
+        <p>High-performance MCP server that dynamically converts massive OpenAPI/Swagger specifications into
+          executable LLM tools on the fly — so an agent can address an API surface far larger than its context
+          window.</p>
+        <div class="tags"><span class="tag">openapi</span><span class="tag">bm25f</span><span class="tag">context-engineering</span><span class="tag">scalable-mcp</span></div>
+      </a>
+
+      <a class="card" href="https://github.com/prabhukirangit/AgentShield">
+        <h3>AgentShield</h3>
+        <p>Framework-agnostic security middleware that wraps any agent runtime — Claude, Copilot, LangGraph,
+          AutoGen, CrewAI — and enforces defences against the OWASP ASI threat classes without rewriting the
+          agents.</p>
+        <div class="tags"><span class="tag">agent-security</span><span class="tag">owasp-asi</span><span class="tag">middleware</span></div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ========================== PUBLICATIONS ========================== -->
+  <section id="publications">
+    <div class="h"><h2>Publications</h2><div class="rule"></div></div>
+
+    <div class="pub">
+      <div class="t">OKTS: Open Knowledge Tool Search (Progressive Tool Disclosure with Portable Descriptors)</div>
+      <div class="v">Preprint, 2026. · <a href="okts-preprint.pdf">PDF</a> ·
+        <a href="https://github.com/prabhukirangit/OKTS">code</a></div>
+    </div>
+
+    <div class="pub">
+      <div class="t">Group Recommender System: Some Experimental Results</div>
+      <div class="v">International Conference on Agents and Artificial Intelligence (ICAART), Barcelona, Spain, 2013. ·
+        <a href="https://www.scitepress.org/papers/2013/43310/">SciTePress ↗</a></div>
+    </div>
+
+    <div class="pub">
+      <div class="t">Deploying Deep Learning Techniques to Identify Abnormal Driver Behaviour</div>
+      <div class="v">White paper, Harman Connected Services. ·
+        <a href="https://services.harman.com/resources/identify-abnormal-driver-behavior-through-deep-learning">harman.com ↗</a></div>
+    </div>
+  </section>
+
+  <!-- =========================== EXPERIENCE =========================== -->
+  <section id="experience">
+    <div class="h"><h2>Experience</h2><div class="rule"></div></div>
+    <p class="sub">14+ years across data science and applied ML; the last four on LLM agents and retrieval.</p>
+
+    <div class="item">
+      <div class="when">Sep 2022 — present</div>
+      <div class="what"><b>Staff Data Scientist</b> · <span class="org">Cloud Software Group (formerly Citrix)</span>
+        <p>Applied LLM systems: retrieval-augmented assistants with hybrid search and re-ranking, multi-agent
+          orchestration with LangGraph, MCP servers as control planes, and evaluation/observability pipelines.</p></div>
+    </div>
+
+    <div class="item">
+      <div class="when">Jul 2018 — Sep 2022</div>
+      <div class="what"><b>Assistant Manager, Data Science</b> · <span class="org">KPMG</span>
+        <p>Entity matching with sentence transformers, knowledge-graph recommendation on Neo4j, uplift
+          modelling and anomaly detection at scale for financial-services clients.</p></div>
+    </div>
+
+    <div class="item">
+      <div class="when">Mar 2016 — Jul 2018</div>
+      <div class="what"><b>Senior Data Scientist</b> · <span class="org">Harman Connected Services</span>
+        <p>Text classification ensembles, recommendation modules for mobile, and supervised fault detection
+          for telecom network devices.</p></div>
+    </div>
+
+    <div class="item">
+      <div class="when">Jul 2012 — Mar 2016</div>
+      <div class="what"><b>Application Developer / Business Analyst</b> · <span class="org">Tata Consultancy Services</span>
+        <p>ETL and business intelligence in banking and finance.</p></div>
+    </div>
+  </section>
+
+  <!-- =========================== EDUCATION =========================== -->
+  <section id="education">
+    <div class="h"><h2>Education</h2><div class="rule"></div></div>
+    <div class="item">
+      <div class="when">2010 — 2012</div>
+      <div class="what"><b>M.Tech, Artificial Intelligence</b> · <span class="org">University of Hyderabad</span></div>
+    </div>
+    <div class="item">
+      <div class="when">2006 — 2010</div>
+      <div class="what"><b>B.Tech, Computer Science &amp; Engineering</b> · <span class="org">JNTU Hyderabad</span></div>
+    </div>
+  </section>
+
+  <footer>
+    <p>Research and open-source work on this page is my own and is not affiliated with, funded by, or endorsed
+      by my employer.</p>
+    <p>© 2026 Prabhukiran Ganapavarapu · <a href="mailto:prabhukiran.g@gmail.com">prabhukiran.g@gmail.com</a> ·
+      <a href="https://github.com/prabhukirangit">github.com/prabhukirangit</a></p>
+  </footer>
+</div>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Prabhukiran Ganapavarapu",
+  "email": "mailto:prabhukiran.g@gmail.com",
+  "url": "https://prabhukirangit.github.io/",
+  "jobTitle": "Staff Data Scientist",
+  "worksFor": { "@type": "Organization", "name": "Cloud Software Group" },
+  "alumniOf": [
+    { "@type": "CollegeOrUniversity", "name": "University of Hyderabad" },
+    { "@type": "CollegeOrUniversity", "name": "JNTU Hyderabad" }
+  ],
+  "sameAs": ["https://github.com/prabhukirangit"],
+  "knowsAbout": ["Information Retrieval","Large Language Model Agents","Model Context Protocol","Retrieval-Augmented Generation","Machine Learning"]
+}
+</script>
+
+<script>
+"use strict";
+const root = document.documentElement;
+document.getElementById('themeBtn').onclick = () => {
+  const cur = root.getAttribute('data-theme')
+    || (matchMedia('(prefers-color-scheme:dark)').matches ? 'dark' : 'light');
+  root.setAttribute('data-theme', cur === 'dark' ? 'light' : 'dark');
+};
+</script>
+</body>
+</html>
