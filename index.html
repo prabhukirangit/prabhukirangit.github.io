@@ -61,15 +61,27 @@
   header.hero{padding:54px 0 30px;border-bottom:1px solid var(--line)}
   header h1{font-size:clamp(32px,6vw,46px);font-weight:760}
   .role{color:var(--muted);font-size:clamp(15px,2.4vw,17.5px);margin-top:10px;font-weight:500}
-  .bio{margin-top:20px;max-width:68ch}
-  .bio p{font-size:15px;color:var(--muted)}
-  .bio p b{color:var(--ink);font-weight:650}
-  .lede{font-size:16.5px!important;color:var(--ink)!important}
+  .lede{margin-top:20px;font-size:16.5px;color:var(--ink);max-width:66ch}
   .lede .em{font-weight:650}
-  .toolkit{margin-top:22px;padding-top:18px;border-top:1px dashed var(--line)}
-  .tk-label{display:block;font:700 11px var(--mono);letter-spacing:.12em;text-transform:uppercase;
-            color:var(--faint);margin-bottom:9px}
   .links{display:flex;flex-wrap:wrap;gap:9px;margin-top:24px}
+
+  /* ---- expertise / solutions / frameworks ---- */
+  .exp{display:grid;grid-template-columns:1fr 1fr;gap:12px 22px}
+  @media(max-width:700px){.exp{grid-template-columns:1fr}}
+  .exp article{padding:14px 0;border-top:2px solid var(--line)}
+  .exp h3{font-size:15px;font-weight:700;letter-spacing:-.01em}
+  .exp p{font-size:14px;color:var(--muted);margin-top:6px}
+
+  .sol{display:grid;gap:9px}
+  .sol div{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px 15px;
+           font-size:14px;color:var(--muted)}
+  .sol div b{color:var(--ink);font-weight:650}
+
+  .fw{display:grid;gap:14px}
+  .fwrow{display:flex;gap:16px;align-items:flex-start}
+  @media(max-width:640px){.fwrow{flex-direction:column;gap:7px}}
+  .fwk{flex:0 0 158px;font:700 11.5px var(--mono);letter-spacing:.09em;text-transform:uppercase;
+       color:var(--faint);padding-top:4px}
   .btn{display:inline-flex;align-items:center;gap:7px;border:1px solid var(--line);background:var(--panel);
        color:var(--ink);border-radius:9px;padding:8px 13px;font:600 13.5px var(--sans);box-shadow:var(--shadow)}
   .btn:hover{border-color:var(--brand);text-decoration:none}
@@ -134,6 +146,7 @@
   <span class="mark"><span class="dot3"><i></i><i></i><i></i><i></i><i></i><i></i></span> PG</span>
   <div class="spacer"></div>
   <a class="navlink" href="#research">Research</a>
+  <a class="navlink opt" href="#expertise">Expertise</a>
   <a class="navlink opt" href="#software">Software</a>
   <a class="navlink opt" href="#publications">Publications</a>
   <a class="navlink opt" href="#experience">Experience</a>
@@ -144,44 +157,15 @@
 
   <header class="hero">
     <h1>Prabhukiran Ganapavarapu</h1>
-    <div class="role">Staff Data Scientist, Cloud Software Group (formerly Citrix) · Bengaluru, India<br>
-      Independent researcher — retrieval and context engineering for LLM agents</div>
+    <div class="role">Independent researcher — retrieval and context engineering for LLM agents<br>
+      Staff Data Scientist · Bengaluru, India</div>
 
-    <div class="bio">
-      <p class="lede">Staff Data Scientist with <span class="em">14+ years of experience</span> spanning
-        Generative AI, machine learning, and enterprise AI architecture. Currently at Cloud Software Group
-        (formerly Citrix), where I architect production-grade LLM systems end to end — from retrieval pipelines
-        and multi-agent orchestration to guardrails, evaluation, and observability.</p>
-
-      <p>I specialize in building enterprise AI copilots and agentic systems. My work includes
-        <b>Citrix Aidrien</b>, an AI assistant for Citrix and NetScaler products built on RAG with hybrid search
-        and re-ranking; a supervisor-driven multi-agent architecture for infrastructure lifecycle management
-        using LangGraph; and MCP servers that expose infrastructure and APIs as agent-ready tools. I designed
-        <b>NS-Shift</b>, an LLM-agent migration tool that has delivered <b>$1.3M+ in savings</b> by automating
-        competitor-to-NetScaler configuration conversion.</p>
-
-      <p>My core strengths are in RAG optimization, prompt engineering, LLMOps, and Responsible AI — including
-        PII handling, human-in-the-loop workflows, and evaluation frameworks using DeepEval, RAGAS, and
-        Langfuse. Earlier in my career, I led data science engagements at KPMG for large financial services
-        clients and built award-winning ML solutions at Harman, giving me a strong foundation in classical ML,
-        NLP, and deep learning alongside modern GenAI.</p>
-
-      <p>I hold an M.Tech in Artificial Intelligence from the University of Hyderabad and have contributed to
-        the field through published research (ICAART), white papers, patents-track work, open-source projects
-        (SpecRouterMCP), and multiple hackathon wins.</p>
-    </div>
-
-    <div class="toolkit">
-      <span class="tk-label">Technical toolkit</span>
-      <div class="tags">
-        <span class="tag">Python</span><span class="tag">SQL</span><span class="tag">PySpark</span>
-        <span class="tag">LangChain</span><span class="tag">LangGraph</span><span class="tag">LlamaIndex</span>
-        <span class="tag">Hugging Face</span><span class="tag">FAISS</span><span class="tag">Qdrant</span>
-        <span class="tag">Chroma</span><span class="tag">Azure AI Search</span><span class="tag">TensorFlow</span>
-        <span class="tag">PyTorch</span><span class="tag">Azure</span><span class="tag">AWS</span>
-        <span class="tag">Docker</span><span class="tag">FastAPI</span>
-      </div>
-    </div>
+    <p class="lede">I work on retrieval for agents that have too many tools. After more than a decade building
+      production machine learning systems, and the last few years building enterprise LLM systems end to end,
+      my research asks a deliberately awkward question: <span class="em">how much of the retrieval stack can
+      you delete and still rank correctly?</span> Three open-source runtimes replace embedding models, vector
+      stores and re-indexing pipelines with portable text descriptors and lexical-first ranking — and measure
+      what that actually costs in accuracy.</p>
 
     <div class="links">
       <a class="btn primary" href="#research">Research →</a>
@@ -230,6 +214,117 @@
         <a class="btn" href="https://github.com/prabhukirangit/OKTS">Code &amp; eval harness ↗</a>
         <a class="btn" href="https://prabhukirangit.github.io/OKTS/">Interactive demos ↗</a>
       </div>
+    </div>
+  </section>
+
+  <!-- =========================== EXPERTISE =========================== -->
+  <section id="expertise">
+    <div class="h"><h2>Areas of Expertise</h2><div class="rule"></div></div>
+    <p class="sub">What I build, and the problems I keep returning to.</p>
+
+    <div class="exp">
+      <article>
+        <h3>Retrieval &amp; RAG</h3>
+        <p>Hybrid retrieval combining lexical and vector signals with re-ranking, and custom scoring pipelines
+          tuned for domain correctness rather than generic relevance. My recent work pushes in the opposite
+          direction — establishing how much of that stack is actually load-bearing, and what a deterministic,
+          lexical-first ranker (BM25, BM25F, reciprocal rank fusion) gives up when the embedding model and
+          vector store are removed entirely.</p>
+      </article>
+
+      <article>
+        <h3>Agentic architectures</h3>
+        <p>Supervisor-driven multi-agent systems in which a reactive router owns intent detection, dynamic tool
+          selection and delegation across sub-agents. State-machine orchestration with checkpointed memory for
+          long-running multi-turn workflows, and human-in-the-loop gates placed at the steps that are expensive
+          to get wrong.</p>
+      </article>
+
+      <article>
+        <h3>Tool &amp; context engineering</h3>
+        <p>Progressive disclosure of tools and skills, so an agent acquires capability on demand instead of
+          carrying every definition in context. MCP servers that expose infrastructure, REST APIs and
+          OpenAPI/Swagger surfaces as agent-ready tools, including semantic discovery over API catalogues far
+          larger than a context window. Context summarization and filesystem offloading to keep long sessions
+          coherent.</p>
+      </article>
+
+      <article>
+        <h3>Guardrails &amp; Responsible AI</h3>
+        <p>Query validation and domain scoping, PII detection and masking with named-entity recognition,
+          reflection loops for self-correction, and policy gating at the dispatch choke point. I prefer to
+          design around the failure modes — grounding, refusal, and explicit confirmation before irreversible
+          actions — rather than bolt safety on after the fact.</p>
+      </article>
+
+      <article>
+        <h3>Evaluation &amp; observability</h3>
+        <p>Evaluation harnesses that report cost alongside quality and never one without the other, with
+          regression suites that make every retrieval change measurable. Dataset management and tracing with
+          DeepEval, RAGAS and Langfuse, and telemetry covering model consumption, latency and output validity.</p>
+      </article>
+
+      <article>
+        <h3>Classical ML, NLP &amp; deep learning</h3>
+        <p>The foundation underneath the generative work: entity matching with Siamese sentence-transformer
+          networks, text-classification ensembles, unsupervised anomaly detection with autoencoder families,
+          knowledge-graph recommendation on Neo4j, uplift modelling and time-series forecasting — with
+          interpretability (integrated gradients, LIME) treated as part of delivery rather than an afterthought.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- =========================== SOLUTIONS =========================== -->
+  <section id="solutions">
+    <div class="h"><h2>Solutions Delivered</h2><div class="rule"></div></div>
+    <p class="sub">Classes of system I have designed and shipped to production.</p>
+
+    <div class="sol">
+      <div><b>Enterprise domain copilots</b> — assistants grounded in product and support documentation, with
+        hybrid retrieval, re-ranking, domain scoping and multi-turn memory.</div>
+      <div><b>Infrastructure lifecycle agents</b> — autonomous planning for upgrade paths, advisory and
+        end-of-life analysis, build recommendation and pre-flight validation.</div>
+      <div><b>Spec-to-tool servers</b> — OpenAPI/Swagger specifications converted into executable, discoverable
+        LLM tools on the fly, so agents can address surfaces larger than their context.</div>
+      <div><b>Configuration migration agents</b> — automated conversion between competing platform
+        configuration and rule languages, with validation and self-correcting feedback loops.</div>
+      <div><b>Support triage &amp; RCA agents</b> — ticket, log and diagnostic-bundle analysis producing root
+        cause and actionable insight, with PII middleware and human review gates.</div>
+      <div><b>Anomaly detection &amp; observability</b> — unsupervised and ensemble detection over network,
+        access and transaction data, deployed as monitored services.</div>
+    </div>
+  </section>
+
+  <!-- =========================== FRAMEWORKS ========================== -->
+  <section id="frameworks">
+    <div class="h"><h2>Frameworks &amp; Tooling</h2><div class="rule"></div></div>
+
+    <div class="fw">
+      <div class="fwrow"><span class="fwk">Languages</span><div class="tags">
+        <span class="tag">Python</span><span class="tag">SQL</span><span class="tag">PySpark</span>
+        <span class="tag">R</span><span class="tag">Shell</span></div></div>
+
+      <div class="fwrow"><span class="fwk">LLM &amp; agents</span><div class="tags">
+        <span class="tag">LangChain</span><span class="tag">LangGraph</span><span class="tag">DeepAgents</span>
+        <span class="tag">LlamaIndex</span><span class="tag">LlamaParse</span><span class="tag">Hugging Face</span>
+        <span class="tag">MCP</span></div></div>
+
+      <div class="fwrow"><span class="fwk">Evaluation</span><div class="tags">
+        <span class="tag">DeepEval</span><span class="tag">RAGAS</span><span class="tag">openevals</span>
+        <span class="tag">Langfuse</span></div></div>
+
+      <div class="fwrow"><span class="fwk">ML &amp; deep learning</span><div class="tags">
+        <span class="tag">PyTorch</span><span class="tag">TensorFlow</span><span class="tag">Keras</span>
+        <span class="tag">Transformers</span><span class="tag">MLflow</span></div></div>
+
+      <div class="fwrow"><span class="fwk">Data &amp; vector stores</span><div class="tags">
+        <span class="tag">FAISS</span><span class="tag">Qdrant</span><span class="tag">Chroma</span>
+        <span class="tag">Azure AI Search</span><span class="tag">PostgreSQL</span><span class="tag">Neo4j</span>
+        <span class="tag">Teradata</span></div></div>
+
+      <div class="fwrow"><span class="fwk">Cloud &amp; delivery</span><div class="tags">
+        <span class="tag">Azure</span><span class="tag">AWS</span><span class="tag">Docker</span>
+        <span class="tag">FastAPI</span><span class="tag">Flask</span><span class="tag">Splunk</span></div></div>
     </div>
   </section>
 
