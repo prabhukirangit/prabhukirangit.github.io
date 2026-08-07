@@ -61,9 +61,15 @@
   header.hero{padding:54px 0 30px;border-bottom:1px solid var(--line)}
   header h1{font-size:clamp(32px,6vw,46px);font-weight:760}
   .role{color:var(--muted);font-size:clamp(15px,2.4vw,17.5px);margin-top:10px;font-weight:500}
-  .lede{margin-top:18px;font-size:16.5px;color:var(--ink);max-width:64ch}
+  .bio{margin-top:20px;max-width:68ch}
+  .bio p{font-size:15px;color:var(--muted)}
+  .bio p b{color:var(--ink);font-weight:650}
+  .lede{font-size:16.5px!important;color:var(--ink)!important}
   .lede .em{font-weight:650}
-  .links{display:flex;flex-wrap:wrap;gap:9px;margin-top:22px}
+  .toolkit{margin-top:22px;padding-top:18px;border-top:1px dashed var(--line)}
+  .tk-label{display:block;font:700 11px var(--mono);letter-spacing:.12em;text-transform:uppercase;
+            color:var(--faint);margin-bottom:9px}
+  .links{display:flex;flex-wrap:wrap;gap:9px;margin-top:24px}
   .btn{display:inline-flex;align-items:center;gap:7px;border:1px solid var(--line);background:var(--panel);
        color:var(--ink);border-radius:9px;padding:8px 13px;font:600 13.5px var(--sans);box-shadow:var(--shadow)}
   .btn:hover{border-color:var(--brand);text-decoration:none}
@@ -141,11 +147,41 @@
     <div class="role">Staff Data Scientist, Cloud Software Group (formerly Citrix) · Bengaluru, India<br>
       Independent researcher — retrieval and context engineering for LLM agents</div>
 
-    <p class="lede">I build retrieval systems for agents that have too many tools. My current work asks a
-      deliberately awkward question: <span class="em">how much of the retrieval stack can you delete and still
-      rank correctly?</span> Across three open-source runtimes I have been replacing embedding models, vector
-      stores and re-indexing pipelines with portable text descriptors and lexical-first ranking — and measuring
-      what that actually costs in accuracy.</p>
+    <div class="bio">
+      <p class="lede">Staff Data Scientist with <span class="em">14+ years of experience</span> spanning
+        Generative AI, machine learning, and enterprise AI architecture. Currently at Cloud Software Group
+        (formerly Citrix), where I architect production-grade LLM systems end to end — from retrieval pipelines
+        and multi-agent orchestration to guardrails, evaluation, and observability.</p>
+
+      <p>I specialize in building enterprise AI copilots and agentic systems. My work includes
+        <b>Citrix Aidrien</b>, an AI assistant for Citrix and NetScaler products built on RAG with hybrid search
+        and re-ranking; a supervisor-driven multi-agent architecture for infrastructure lifecycle management
+        using LangGraph; and MCP servers that expose infrastructure and APIs as agent-ready tools. I designed
+        <b>NS-Shift</b>, an LLM-agent migration tool that has delivered <b>$1.3M+ in savings</b> by automating
+        competitor-to-NetScaler configuration conversion.</p>
+
+      <p>My core strengths are in RAG optimization, prompt engineering, LLMOps, and Responsible AI — including
+        PII handling, human-in-the-loop workflows, and evaluation frameworks using DeepEval, RAGAS, and
+        Langfuse. Earlier in my career, I led data science engagements at KPMG for large financial services
+        clients and built award-winning ML solutions at Harman, giving me a strong foundation in classical ML,
+        NLP, and deep learning alongside modern GenAI.</p>
+
+      <p>I hold an M.Tech in Artificial Intelligence from the University of Hyderabad and have contributed to
+        the field through published research (ICAART), white papers, patents-track work, open-source projects
+        (SpecRouterMCP), and multiple hackathon wins.</p>
+    </div>
+
+    <div class="toolkit">
+      <span class="tk-label">Technical toolkit</span>
+      <div class="tags">
+        <span class="tag">Python</span><span class="tag">SQL</span><span class="tag">PySpark</span>
+        <span class="tag">LangChain</span><span class="tag">LangGraph</span><span class="tag">LlamaIndex</span>
+        <span class="tag">Hugging Face</span><span class="tag">FAISS</span><span class="tag">Qdrant</span>
+        <span class="tag">Chroma</span><span class="tag">Azure AI Search</span><span class="tag">TensorFlow</span>
+        <span class="tag">PyTorch</span><span class="tag">Azure</span><span class="tag">AWS</span>
+        <span class="tag">Docker</span><span class="tag">FastAPI</span>
+      </div>
+    </div>
 
     <div class="links">
       <a class="btn primary" href="#research">Research →</a>
@@ -307,8 +343,9 @@
   </section>
 
   <footer>
-    <p>Research and open-source work on this page is my own and is not affiliated with, funded by, or endorsed
-      by my employer.</p>
+    <p>The preprint and the open-source projects listed above are independent personal work, carried out on my
+      own time and not affiliated with, funded by, or endorsed by my employer. Professional experience is
+      described here for background only; all views are my own.</p>
     <p>© 2026 Prabhukiran Ganapavarapu · <a href="mailto:prabhukiran.g@gmail.com">prabhukiran.g@gmail.com</a> ·
       <a href="https://github.com/prabhukirangit">github.com/prabhukirangit</a></p>
   </footer>
